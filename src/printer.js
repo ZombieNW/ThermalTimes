@@ -15,6 +15,16 @@ export async function getPrinter(vendorId = 0x4b8, productId = 0x0202) {
     });
 }
 
+// for cron jobs
+export async function withPrinter(task) {
+    const printer = await getPrinter();
+    try {
+        await task(printer);
+    } finally {
+        closePrinter(printer);
+    }
+}
+
 export function closePrinter(printer) {
     printer.close();
 }

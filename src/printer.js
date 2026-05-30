@@ -14,3 +14,7 @@ export async function getPrinter(vendorId = 0x4b8, productId = 0x0202) {
         });
     });
 }
+
+export function closePrinter(printer) {
+    printer.close();
+}

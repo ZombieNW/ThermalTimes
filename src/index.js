@@ -5,7 +5,7 @@ import { withPrinter } from "./printer.js";
 import * as weatherPlugin from "./plugins/weather.js";
 const plugins = [weatherPlugin];
 
-async function runMorningRoutine() {
+export async function runMorningRoutine() {
     console.log("Starting morning print routine...");
 
     await withPrinter(async (printer) => {

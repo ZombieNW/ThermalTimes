@@ -1,0 +1,3 @@
+import { runMorningRoutine } from ".";
+
+runMorningRoutine();

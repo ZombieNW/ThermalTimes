@@ -2,10 +2,11 @@ import "dotenv/config";
 import cron from "node-cron";
 import { withPrinter } from "./printer.js";
 
+import * as greetingPlugin from "./plugins/greeting.js";
 import * as weatherPlugin from "./plugins/weather.js";
 import * as jokePlugin from "./plugins/joke.js";
 import * as quotePlugin from "./plugins/quote.js";
-const plugins = [weatherPlugin, jokePlugin, quotePlugin];
+const plugins = [greetingPlugin, weatherPlugin, jokePlugin, quotePlugin];
 
 export async function runMorningRoutine() {
     console.log("Starting morning print routine...");

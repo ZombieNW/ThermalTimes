@@ -18,14 +18,14 @@ export async function execute(printer) {
     printer.size(1, 1);
 
     printer.text(`Weather Forecast: ${city}`);
-    printer.text("--------------------------");
+    printer.text("----------------------------------------");
     printer.size(2, 2);
     printer.text(`${tempMin}F - ${tempMax}F`);
     printer.size(1, 1);
     printer.text("Today's Range");
-    printer.text("--------------------------");
+    printer.text("----------------------------------------");
     printer.text(desc.toUpperCase());
-    printer.text("--------------------------");
+    printer.text("----------------------------------------");
     printer.feed(2);
 }
 

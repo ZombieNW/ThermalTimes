@@ -9,9 +9,9 @@ export async function execute(printer) {
     printer.size(1, 1);
 
     printer.text("Joke of the Day");
-    printer.text("--------------------------");
+    printer.text("----------------------------------------");
     printer.text(joke);
-    printer.text("--------------------------");
+    printer.text("----------------------------------------");
     printer.feed(2);
 }
 

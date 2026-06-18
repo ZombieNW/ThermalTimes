@@ -9,13 +9,12 @@ export async function execute(printer) {
     printer.size(1, 1);
 
     printer.text("Quote of the Day");
-    printer.text("--------------------------");
+    printer.text("----------------------------------------");
     printer.text(quote.quote);
-    printer.feed(1);
     printer.align("rt");
     printer.text("-" + quote.author);
     printer.align("ct");
-    printer.text("--------------------------");
+    printer.text("----------------------------------------");
     printer.feed(2);
 }
 

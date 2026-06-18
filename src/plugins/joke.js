@@ -1,7 +1,7 @@
 const JOKE_URL = "https://v2.jokeapi.dev/joke/Any";
 
 export async function execute(printer) {
-    const joke = getJoke();
+    const joke = await getJoke();
 
     printer.font("a");
     printer.align("ct");
@@ -18,13 +18,12 @@ export async function execute(printer) {
 async function getJoke() {
     const response = await fetch(JOKE_URL);
     if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(`Joke API Error: ${errorData.message}`);
+        throw new Error(`Joke API Error: ${response.statusText}`);
     }
     const data = await response.json();
 
-    if (data.type == "twopart") {
-        return data.setup + "\n\n" + data.delivery;
+    if (data.type === "twopart") {
+        return `${data.setup}\n\n${data.delivery}`;
     }
-    return data.joke ? data.joke : "Joke API Error";
+    return data.joke || "Could not retrieve a joke.";
 }

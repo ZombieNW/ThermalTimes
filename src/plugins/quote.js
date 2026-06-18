@@ -1,7 +1,7 @@
 const QUOTE_URL = "https://motivational-spark-api.vercel.app/api/quotes/random";
 
 export async function execute(printer) {
-    const quote = getQuote();
+    const quote = await getQuote();
 
     printer.font("a");
     printer.align("ct");

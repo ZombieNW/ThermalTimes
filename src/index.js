@@ -22,6 +22,7 @@ export async function runMorningRoutine() {
         for (const plugin of plugins) {
             await plugin.execute(printer);
         }
+        printer.feed(2);
         printer.cut();
     });
 

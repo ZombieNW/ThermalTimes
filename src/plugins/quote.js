@@ -12,7 +12,7 @@ export async function execute(printer) {
     printer.text("--------------------------");
     printer.text(quote.quote);
     printer.feed(1);
-    printer.align("r");
+    printer.align("rt");
     printer.text("-" + quote.author);
     printer.align("ct");
     printer.text("--------------------------");

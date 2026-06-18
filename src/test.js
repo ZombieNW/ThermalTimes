@@ -1,3 +1,3 @@
-import { runMorningRoutine } from ".";
+import { runMorningRoutine } from "./index.js";
 
 runMorningRoutine();

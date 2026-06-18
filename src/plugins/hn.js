@@ -19,6 +19,7 @@ export async function execute(printer) {
         printer.align("ct");
         printer.text("Error fetching Hacker News.");
     }
+    printer.feed(2);
 }
 
 async function fetchHackerNews() {

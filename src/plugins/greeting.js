@@ -10,6 +10,7 @@ export async function execute(printer) {
     printer.size(1, 1);
     printer.text(getTodaysDate());
     printer.text("========================================");
+    printer.feed(2);
 }
 
 function getTodaysDate() {

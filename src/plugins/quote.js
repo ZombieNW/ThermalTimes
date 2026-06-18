@@ -1,4 +1,4 @@
-const QUOTE_URL = "https://v2.jokeapi.dev/joke/Any";
+const QUOTE_URL = "https://motivational-spark-api.vercel.app/api/quotes/random";
 
 export async function execute(printer) {
     const quote = getQuote();

@@ -1,7 +1,6 @@
-export async function printWeatherForecast(printer, zipCode) {
-    const forecastData = await fetchForecastByZip(zipCode);
+export async function execute(printer) {
+    const forecastData = await fetchForecastByZip("85302");
 
-    // calculate min/max
     const today = new Date().toISOString().split("T")[0];
     const todayForecasts = forecastData.list.filter((item) =>
         item.dt_txt.startsWith(today),
@@ -32,8 +31,7 @@ export async function printWeatherForecast(printer, zipCode) {
 
 async function fetchForecastByZip(zipCode) {
     const apiKey = process.env.OPENWEATHER_API_KEY;
-    const units = "imperial";
-    const url = `https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=${units}&appid=${apiKey}`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode}&units=imperial&appid=${apiKey}`;
 
     const response = await fetch(url);
     if (!response.ok) {
